@@ -64,6 +64,9 @@ $registration_success = isset($_GET['registration']) && $_GET['registration'] ==
         <div class="links">
             <a href="../insecure/register.php">Зареєструватися</a>
         </div>
+        <div class="links">
+            <a href="../index.php">На головну сторінку</a>
+        </div>
     </div>
 </body>
 </html>
