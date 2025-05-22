@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $sql_query = $stmt->queryString;
+    $sql_query = $stmt->queryString; // Отримуємо підготовлений запит
 
     if ($user && password_verify($password, $user['password'])) {
         $login_successful = true;
@@ -33,6 +33,7 @@ $registration_success = isset($_GET['registration']) && $_GET['registration'] ==
 <html>
 <head>
     <title>Захищений вхід</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../secure/style.css">
 </head>
 <body>
@@ -64,6 +65,9 @@ $registration_success = isset($_GET['registration']) && $_GET['registration'] ==
 
         <div class="links">
             <a href="../secure/register.php">Зареєструватися</a>
+        </div>
+        <div class="links">
+            <a href="../index.php">На головну сторінку</a>
         </div>
     </div>
 </body>
